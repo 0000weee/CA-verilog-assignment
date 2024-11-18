@@ -10,7 +10,7 @@ B08902150 謝騏鴻
 "Register"：去讀取RS1addr_i、RS2addr_i位址的資料，再接著把這兩個寫進目標暫存器，以便後續操作此兩暫存器、做運算。
 
 
-2. A description of your testing process, including:  
+2. A description of your testing process, including:
 Commands used to run tests.  
 Descriptions of your testbenches or any other testing scripts.  
 Test results, including screenshots or waveform images where applicable.  
