@@ -1,5 +1,4 @@
-CA2024 Programming hw3  
-B08902150 謝騏鴻  
+**CA2024 Programming hw3 B08902150 謝騏鴻**  
 
 **1.A description of each module’s design.**  
 
