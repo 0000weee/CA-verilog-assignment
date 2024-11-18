@@ -1,7 +1,7 @@
 CA2024 Programming hw3  
 B08902150 謝騏鴻  
 
-1.A description of each module’s design.  
+**1.A description of each module’s design.**  
 
 "ALU"：讀取兩個 32-bit 的輸入，並根據 ALUControl 的結果，做運算，除非是是 register 沒東西，就輸出 zero  
 不然 ALU的運算結果都要送到 register。  
@@ -10,15 +10,21 @@ B08902150 謝騏鴻
 "Register"：去讀取RS1addr_i、RS2addr_i位址的資料，再接著把這兩個寫進目標暫存器，以便後續操作此兩暫存器、做運算。
 
 
-2.A description of your testing process, including:  
+**2.A description of your testing process, including:**  
 Commands used to run tests.  
 Descriptions of your testbenches or any other testing scripts.  
 Test results, including screenshots or waveform images where applicable.  
 
-測試ALU步驟：  
+測試ALU步驟： 
+```
 iverilog -o ALU_test ALU.v ALU_tb.v  
+```
+```
 vvp ALU_test  
+```
+```
 gtkwave ALU_test.vcd  
+```
 
 因為我的測資不多，用仔細看檢查16進位的運算的方式，判斷程式有無正確執行
 
