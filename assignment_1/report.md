@@ -1,7 +1,7 @@
-#CA2024 Programming hw3 #  
+# CA2024 Programming hw3  
 **B08902150 謝騏鴻**  
 
-**1.A description of each module’s design.**  
+## 1.A description of each module’s design.  
 
 "ALU"：讀取兩個 32-bit 的輸入，並根據 ALUControl 的結果，做運算，除非是是 register 沒東西，就輸出 zero  
 不然 ALU的運算結果都要送到 register。  
@@ -10,7 +10,7 @@
 "Register"：去讀取RS1addr_i、RS2addr_i位址的資料，再接著把這兩個寫進目標暫存器，以便後續操作此兩暫存器、做運算。
 
 
-**2.A description of your testing process:**  
+## 2.A description of your testing process:  
 
 測試ALU步驟： 
 ```
@@ -40,7 +40,7 @@ vp Registers_test
 gtkwave Registers_test.vcd  
 ```
 
-注意以下細節
+注意以下細節:  
 當 rst_i = 0 時，所有輸出的資料信號（如 RS1data_o 和 RS2data_o）都應為零。  
 當 rst_i 從低（0）拉高（1）後，暫存器開始正常工作。  
 RegWrite_i：寫入啟用信號，只有在高電平（1）時，RDdata_i 的值應被寫入 RDaddr_i 指定的暫存器。  
