@@ -33,9 +33,15 @@ gtkwave ALU_test.vcd
 
 
 測試Register步驟：
+```
 iverilog -o Registers_test Registers.v Registers_tb.v  
+```
+```
 vp Registers_test  
+```
+```
 gtkwave Registers_test.vcd  
+```
 
 注意以下細節
 當 rst_i = 0 時，所有輸出的資料信號（如 RS1data_o 和 RS2data_o）都應為零。  
