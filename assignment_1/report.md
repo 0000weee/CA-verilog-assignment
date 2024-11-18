@@ -7,7 +7,7 @@ B08902150 謝騏鴻
 不然 ALU的運算結果都要送到 register。  
 其中，shift left都是補 0，但是shift right會有正負號的問題，不能都補0，所以分成Arithmetic,Logical.  
 
-"Register"：去讀取RS1addr_i、RS2addr_i位址的資料，再接著把這兩個寫進目標暫存器，以便後續操作此兩暫存器、做運算。  
+"Register"：去讀取RS1addr_i、RS2addr_i位址的資料，再接著把這兩個寫進目標暫存器，以便後續操作此兩暫存器、做運算。
 
 
 2. A description of your testing process, including:  
