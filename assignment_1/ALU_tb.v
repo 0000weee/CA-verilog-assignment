@@ -26,15 +26,15 @@ module ALU_tb;
         $dumpvars(0, ALU_tb); // 記錄所有信號變化
 
         // Test Addition
-        data1_i = 32'h00000010; // 16
-        data2_i = 32'h00000020; // 32
+        data1_i = 32'hFFFFFFFF; // 2^32-1
+        data2_i = 32'h00000001; // 1
         ALUCtrl_i = 3'b000; // Addition
         #10;
         $display("Addition: %d + %d = %d, Zero: %b", data1_i, data2_i, data_o, zero_o);
 
         // Test Subtraction
-        data1_i = 32'h00000020; // 32
-        data2_i = 32'h00000020; // 32
+        data1_i = 32'h00000000; // 32
+        data2_i = 32'h00000001; // 32
         ALUCtrl_i = 3'b001; // Subtraction
         #10;
         $display("Subtraction: %d - %d = %d, Zero: %b", data1_i, data2_i, data_o, zero_o);

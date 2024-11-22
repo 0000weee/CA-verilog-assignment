@@ -3,8 +3,8 @@
 
 ## 1. A description of each module’s design.  
 
-ALU：讀取兩個 32-bit 的輸入，並根據 ALUControl 的結果，做運算，除非是是 register 沒東西，就輸出 zero  
-不然 ALU的運算結果都要送到 register。  
+ALU：讀取兩個 32-bit 的輸入，並根據 ALUControl 的結果，做運算，除非是是 register 沒東西，就輸出 zero  。
+
 其中，shift left都是補 0，但是shift right會有正負號的問題，不能都補0，所以分成Arithmetic,Logical.  
 
 Register：去讀取RS1addr_i、RS2addr_i位址的資料，再接著把這兩個寫進目標暫存器，以便後續操作此兩暫存器、做運算。
@@ -25,12 +25,17 @@ iverilog -o ALU_test ALU.v ALU_tb.v
 ```
 vvp ALU_test  
 ```
+輸入 finish
 ```
 gtkwave ALU_test.vcd  
 ```
+可以看到每個i/o的變化
 
-因為我的測資不多，用仔細看檢查16進位的運算的方式，判斷程式有無正確執行
+因為我的測資不多，用眼睛看檢查16進位的運算的結果，判斷程式有無正確執行
 
+特殊情況：  
+0xFFFFFFFF+1 的結果應該為 0x00000000。  
+0x00000000−1 的結果應該為 0xFFFFFFFF。  
 
 ![alt text](image.png)
 
@@ -40,8 +45,9 @@ gtkwave ALU_test.vcd
 iverilog -o Registers_test Registers.v Registers_tb.v  
 ```
 ```
-vp Registers_test  
+vvp Registers_test  
 ```
+輸入finish
 ```
 gtkwave Registers_test.vcd  
 ```  
